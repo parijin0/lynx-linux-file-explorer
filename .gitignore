@@ -1,0 +1,25 @@
+# Build files
+build/
+cmake-build-*/
+
+# Compiled binaries
+*.o
+*.out
+*.exe
+lynx
+
+# Debug files
+*.dSYM/
+
+# Editor files
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
