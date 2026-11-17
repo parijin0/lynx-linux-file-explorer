@@ -211,3 +211,24 @@ Only completed and verified functionality will be marked as implemented.
 - Tested against the LYNX project directory.
 
 **Result:** Directory listing functionality works successfully.
+## Milestone 2: Directory Navigation
+
+**Status:** Completed and tested
+
+### Implementation
+- Created Navigator class.
+- Implemented current directory tracking.
+- Implemented navigation into subdirectories.
+- Added relative and absolute path support.
+- Implemented parent directory navigation.
+- Added validation for invalid directory paths.
+- Used C++17 std::filesystem.
+
+### Testing
+- Created tests/test_navigation.cpp.
+- Verified current directory retrieval.
+- Tested navigation into src.
+- Tested parent directory navigation.
+- Tested invalid directory handling.
+
+**Result:** All navigation tests passed successfully.

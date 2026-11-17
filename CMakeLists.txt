@@ -29,3 +29,10 @@ add_executable(lynx_directory_test
 )
 
 target_include_directories(lynx_directory_test PRIVATE include)
+# Navigation module test
+add_executable(lynx_navigation_test
+    tests/test_navigation.cpp
+    src/navigation/navigator.cpp
+)
+
+target_include_directories(lynx_navigation_test PRIVATE include)
