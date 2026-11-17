@@ -301,3 +301,44 @@ Only completed and verified functionality will be marked as implemented.
 - Tested all file operations using a temporary workspace.
 
 **Result:** All reported Normal Mode tests passed.
+## Milestone 6: Command Mode
+
+**Status: Completed and tested**
+
+Implemented an interactive command-line interface for managing files and directories in LYNX.
+
+### Features Implemented
+- `help` – Displays available commands.
+- `pwd` – Displays the current working directory.
+- `ls` – Lists directory contents.
+- `cd` – Navigates between directories.
+- `mkdir` – Creates directories.
+- `touch` – Creates files.
+- `rename` – Renames files and directories.
+- `copy` – Copies files.
+- `move` – Moves files and directories.
+- `delete` – Deletes files.
+- `rmdir` – Deletes empty directories.
+- `du` – Calculates directory size recursively.
+- `sysinfo` – Displays Linux system information.
+- `exit` – Exits Command Mode.
+
+### Additional Improvements
+- Added support for filenames and directory names containing spaces using quotation marks.
+- Added basic command argument validation and error messages.
+- Integrated Command Mode with the main LYNX application.
+
+### System Interfaces and Concepts
+- C++ filesystem library
+- Linux `uname()` system call interface
+- Directory traversal using `std::filesystem`
+- Command parsing and argument handling
+
+### Testing
+- Tested basic commands and navigation.
+- Tested file and directory creation, renaming, copying, moving and deletion.
+- Tested filenames containing spaces.
+- Tested disk usage and system information commands.
+- Successfully built the complete project using CMake.
+
+**Outcome:** Command Mode is integrated into LYNX and its implemented features have been tested successfully.

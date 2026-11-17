@@ -22,20 +22,25 @@ The project focuses on understanding Linux file-system operations, POSIX system 
 - Apply Linux/POSIX system programming concepts.
 - Develop a modular and maintainable C++ application.
 
-## Planned Features
+## Implemented Features
 
-| Module | Planned functionality |
+| Module | Functionality |
 |---|---|
 | Normal Mode | Interactive directory navigation and file listing |
 | Command Mode | Custom command parser and command execution |
 | File Management | Create, copy, move, rename and delete files/directories |
 | File Metadata | File size, type, permissions and timestamps |
-| Search | Search files and directories |
-| Sorting & Filtering | Organize entries based on selected attributes |
-| Storage Analysis | Disk usage and storage information |
-| System Information | Display relevant system-level information |
+| Storage Analysis | Recursive directory disk usage calculation |
+| System Information | Display Linux system and kernel information |
 
-*These are planned capabilities and will be marked as implemented only after development and testing.*
+## Upcoming Features
+
+| Module | Planned Functionality |
+|---|---|
+| Search | Multithreaded search for files and directories |
+| Sorting & Filtering | Organize directory entries based on selected attributes |
+| Memory Management | Monitor system and process memory |
+| Page Replacement | Simulate FIFO, LRU and Optimal algorithms |
 
 ## Technology Stack
 
