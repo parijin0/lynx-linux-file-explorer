@@ -189,3 +189,25 @@ Only completed and verified functionality will be marked as implemented.
 ---
 
 *LYNX Development Log — Version 1.0*
+## Milestone 1: Directory Listing Module
+
+**Status:** Completed and tested
+
+### Implementation
+- Created DirectoryEntry structure to store entry names and types.
+- Implemented list_directory() function.
+- Used POSIX APIs:
+  - opendir() to open directories.
+  - readdir() to read directory entries.
+  - stat() to retrieve entry metadata.
+  - closedir() to close directory streams.
+- Skipped "." and ".." entries.
+- Added error handling for directory-opening failures.
+
+### Testing
+- Created tests/test_directory.cpp.
+- Successfully compiled and executed the test.
+- Verified that files and directories are identified correctly.
+- Tested against the LYNX project directory.
+
+**Result:** Directory listing functionality works successfully.
