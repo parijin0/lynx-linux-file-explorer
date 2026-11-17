@@ -1,17 +1,10 @@
-#include <iostream>
-
-using namespace std;
+#include "ui/application.hpp"
 
 int main() {
 
-    cout << "\n";
-    cout << "====================================\n";
-    cout << "       LYNX FILE EXPLORER           \n";
-    cout << "====================================\n";
-    cout << " Linux File Explorer v1.0\n";
-    cout << "====================================\n";
+    Application app;
 
-    cout << "\nWelcome to LYNX!\n";
+    app.run();
 
     return 0;
 }

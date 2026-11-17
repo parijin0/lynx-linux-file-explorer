@@ -278,3 +278,26 @@ Only completed and verified functionality will be marked as implemented.
 - Temporary test files cleaned up.
 
 **Result:** All verification checks passed.
+## Milestone 5: Normal Mode User Interface
+
+**Status:** Implemented and tested
+
+### Implementation
+- Created modular Terminal UI.
+- Implemented LYNX welcome banner and menus.
+- Created Application controller.
+- Integrated Normal Mode with the main application.
+- Implemented directory listing and navigation.
+- Integrated file metadata retrieval.
+- Integrated all seven file operations.
+- Added input validation and error handling.
+
+### Testing
+- Tested main menu navigation.
+- Tested directory listing and nested navigation.
+- Tested parent directory navigation.
+- Tested file and directory metadata.
+- Tested invalid directory handling.
+- Tested all file operations using a temporary workspace.
+
+**Result:** All reported Normal Mode tests passed.

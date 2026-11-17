@@ -12,7 +12,13 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(lynx
     src/main.cpp
+    src/ui/application.cpp
+    src/ui/terminal.cpp
+    src/ui/normal_mode.cpp
     src/filesystem/directory.cpp
+    src/filesystem/file_metadata.cpp
+    src/filesystem/file_operations.cpp
+    src/navigation/navigator.cpp
 )
 
 target_include_directories(lynx PRIVATE include)
@@ -50,3 +56,10 @@ add_executable(lynx_file_operations_test
 )
 
 target_include_directories(lynx_file_operations_test PRIVATE include)
+# Terminal UI module test
+add_executable(lynx_terminal_test
+    tests/test_terminal.cpp
+    src/ui/terminal.cpp
+)
+
+target_include_directories(lynx_terminal_test PRIVATE include)
