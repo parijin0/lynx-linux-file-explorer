@@ -19,6 +19,10 @@ add_executable(lynx
     src/filesystem/file_metadata.cpp
     src/filesystem/file_operations.cpp
     src/navigation/navigator.cpp
+    src/ui/command_mode.cpp
+    src/memory/memory_monitor.cpp
+    src/memory/page_replacement.cpp
+    src/memory/page_replacement_ui.cpp
 )
 
 target_include_directories(lynx PRIVATE include)
@@ -63,3 +67,15 @@ add_executable(lynx_terminal_test
 )
 
 target_include_directories(lynx_terminal_test PRIVATE include)
+add_executable(lynx_memory_monitor_test
+    src/memory/memory_monitor.cpp
+    tests/test_memory_monitor.cpp
+)
+
+target_include_directories(lynx_memory_monitor_test PRIVATE include)
+add_executable(lynx_page_replacement_test
+    src/memory/page_replacement.cpp
+    tests/test_page_replacement.cpp
+)
+
+target_include_directories(lynx_page_replacement_test PRIVATE include)

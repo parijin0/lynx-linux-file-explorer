@@ -32,6 +32,11 @@ The project focuses on understanding Linux file-system operations, POSIX system 
 | File Metadata | File size, type, permissions and timestamps |
 | Storage Analysis | Recursive directory disk usage calculation |
 | System Information | Display Linux system and kernel information |
+| Memory Monitoring | System RAM monitoring using /proc/meminfo |
+| Process Monitoring | Process memory tracking using /proc/self/status |
+| Page Replacement | FIFO, LRU and Optimal algorithms |
+| Simulation Visualization | Frame-by-frame page replacement simulation |
+| Memory Statistics | Page fault, page hit and ratio calculations |
 
 ## Upcoming Features
 

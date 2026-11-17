@@ -342,3 +342,39 @@ Implemented an interactive command-line interface for managing files and directo
 - Successfully built the complete project using CMake.
 
 **Outcome:** Command Mode is integrated into LYNX and its implemented features have been tested successfully.
+## Milestone 7: Memory Management
+
+**Status: Implemented and tested**
+
+### 1. System Memory Monitoring
+- Read system memory statistics using `/proc/meminfo`.
+- Display total, available and used RAM.
+- Calculate memory utilization percentage.
+
+### 2. Process Memory Monitoring
+- Read process information using `/proc/self/status`.
+- Display virtual memory (VmSize).
+- Display resident memory (VmRSS).
+
+### 3. Page Replacement Simulation
+Implemented three page replacement algorithms:
+- FIFO (First In First Out)
+- LRU (Least Recently Used)
+- Optimal Page Replacement
+
+### 4. Simulation Visualization
+- Accept user-defined page reference strings.
+- Accept user-defined frame counts.
+- Display memory frame contents after every page reference.
+- Identify page hits and page faults.
+- Calculate fault ratio and hit ratio.
+
+### 5. Testing
+- Tested system and process memory monitoring.
+- Tested FIFO, LRU and Optimal algorithms.
+- Verified page fault and hit calculations.
+- Tested frame-by-frame simulation output.
+- Integrated memory management and page replacement into the main LYNX interface.
+- Successfully built the project using CMake.
+
+**Outcome:** Memory monitoring and page replacement simulation are integrated into LYNX.

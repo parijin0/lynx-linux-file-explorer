@@ -1,7 +1,11 @@
 #include "ui/application.hpp"
 #include "ui/normal_mode.hpp"
 #include <iostream>
-
+#include "ui/command_mode.hpp"
+#include "memory/memory_monitor.hpp"
+#include <iomanip>
+#include <exception>
+#include "memory/page_replacement_ui.hpp"
 using namespace std;
 
 void Application::run() {
@@ -29,15 +33,63 @@ void Application::run() {
     break;
 }
 
-            case 2:
-                cout << "\nEntering Command Mode...\n";
-                cout << "Command Mode will be implemented later.\n";
-                break;
+          case 2: {
+    CommandMode command_mode;
+    command_mode.run();
+    break;
+}
+            case 3: {
+    MemoryMonitor monitor;
 
-            case 3:
-                cout << "\nThank you for using LYNX!\n";
-                return;
+    try {
+        MemoryInfo system = monitor.get_system_memory();
+        ProcessMemoryInfo process = monitor.get_process_memory();
 
+        cout << "\n========== MEMORY MANAGEMENT ==========\n";
+
+        cout << "\n--- SYSTEM MEMORY ---\n";
+
+        cout << "Total Memory     : "
+             << system.total_memory / 1024.0 << " MB\n";
+
+        cout << "Available Memory : "
+             << system.available_memory / 1024.0 << " MB\n";
+
+        cout << "Used Memory      : "
+             << system.used_memory / 1024.0 << " MB\n";
+
+        cout << fixed << setprecision(2);
+
+        cout << "Usage Percentage : "
+             << system.usage_percentage << "%\n";
+
+        cout << "\n--- LYNX PROCESS MEMORY ---\n";
+
+        cout << "Virtual Memory   : "
+             << process.virtual_memory / 1024.0 << " MB\n";
+
+        cout << "Resident Memory  : "
+             << process.resident_memory / 1024.0 << " MB\n";
+
+        cout << "=======================================\n";
+    }
+    catch (const exception& e) {
+        cout << "Memory monitoring error: "
+             << e.what() << "\n";
+    }
+
+    break;
+}
+
+case 4: {
+    PageReplacementUI simulator;
+    simulator.run();
+    break;
+}
+
+case 5:
+    cout << "\nThank you for using LYNX!\n";
+    return;
             default:
                 cout << "\nInvalid choice. Please try again.\n";
         }

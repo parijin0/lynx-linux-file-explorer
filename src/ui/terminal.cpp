@@ -20,13 +20,13 @@ void Terminal::display_banner() const {
 // Display main menu
 void Terminal::display_main_menu() const {
 
-    cout << "\n========== MAIN MENU ==========\n";
-    cout << "1. Normal Mode\n";
-    cout << "2. Command Mode\n";
-    cout << "3. Exit\n";
-    cout << "===============================\n";
-
-    cout << "Enter your choice: ";
+    std::cout << "\n========== LYNX FILE EXPLORER ==========\n";
+    std::cout << "1. Normal Mode\n";
+    std::cout << "2. Command Mode\n";
+    std::cout << "3. Memory Management\n";
+    std::cout << "4. Page Replacement Simulator\n";
+    std::cout << "5. Exit\n";
+    std::cout << "Enter your choice: ";
 }
 
 // Display Normal Mode menu
