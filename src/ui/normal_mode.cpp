@@ -1,6 +1,6 @@
 #include "ui/normal_mode.hpp"
 #include "filesystem/file_metadata.hpp"
-
+#include "search/search_manager.hpp"
 #include <ctime>
 #include <iomanip>
 #include "filesystem/directory.hpp"
@@ -274,12 +274,60 @@ void NormalMode::run() {
                 file_operations_menu();
                 break;
 
-            case 6:
-                cout << "\nReturning to Main Menu...\n";
-                return;
+          case 6:
+    search_files();
+    break;
 
+case 7:
+    cout << "\nReturning to Main Menu...\n";
+    return;
             default:
                 cout << "\nInvalid choice. Please try again.\n";
         }
+    }
+}
+
+void NormalMode::search_files() {
+
+    std::string keyword;
+    int thread_count;
+
+    std::cout << "\nEnter filename keyword: ";
+    std::getline(std::cin >> std::ws, keyword);
+
+    std::cout << "Enter number of threads: ";
+
+    if (!(std::cin >> thread_count)) {
+        std::cout << "Invalid thread count.\n";
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
+        return;
+    }
+
+    try {
+
+        SearchManager manager;
+
+        std::vector<std::string> results =
+            manager.search_files(
+                navigator.get_current_path(),
+                keyword,
+                thread_count
+            );
+
+        std::cout << "\n========== SEARCH RESULTS ==========\n";
+
+        for (const auto& result : results) {
+            std::cout << result << "\n";
+        }
+
+        std::cout << "\nTotal Matches: "
+                  << results.size() << "\n";
+
+        std::cout << "====================================\n";
+
+    }
+    catch (const std::exception& e) {
+        std::cout << "Search error: " << e.what() << "\n";
     }
 }

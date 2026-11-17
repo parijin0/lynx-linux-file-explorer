@@ -21,6 +21,7 @@ private:
     void go_to_parent();
     void view_metadata();
     void file_operations_menu();
+    void search_files();
 };
 
 #endif

@@ -1,3 +1,4 @@
+#include "search/search_manager.hpp"
 #include <filesystem>
 #include <iomanip>
 #include "ui/command_mode.hpp"
@@ -30,6 +31,7 @@ void CommandMode::display_help() const {
     cout << "rmdir <name>               Delete empty directory\n";
     cout << "du                 - Show directory disk usage\n";
     cout << "sysinfo            - Display system information\n";
+    cout << "search <keyword> <threads> - Multithreaded file search\n";
     cout << "exit                       Return to main menu\n";
     cout << "===================================\n";
 }
@@ -253,6 +255,43 @@ else if (command == "sysinfo") {
         cout << "Error retrieving system information.\n";
     }
 }
+
+else if (command == "search") {
+
+    if (args.size() != 3) {
+        cout << "Usage: search <keyword> <thread_count>\n";
+        return;
+    }
+
+    try {
+
+        int thread_count = stoi(args[2]);
+
+        SearchManager manager;
+
+        cout << "\nSearching for: " << args[1] << "\n";
+
+        vector<string> results = manager.search_files(
+            current.string(),
+            args[1],
+            thread_count
+        );
+
+        cout << "\n========== SEARCH RESULTS ==========\n";
+
+        for (const auto& result : results) {
+            cout << result << "\n";
+        }
+
+        cout << "\nTotal Matches: " << results.size() << "\n";
+        cout << "====================================\n";
+
+    }
+    catch (const exception& e) {
+        cout << "Search error: " << e.what() << "\n";
+    }
+}
+
     else {
         cout << "Unknown command: " << command
              << ". Type 'help' for available commands.\n";

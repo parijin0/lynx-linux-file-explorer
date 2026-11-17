@@ -378,3 +378,35 @@ Implemented three page replacement algorithms:
 - Successfully built the project using CMake.
 
 **Outcome:** Memory monitoring and page replacement simulation are integrated into LYNX.
+
+## Milestone 8: Multithreaded File Search
+
+**Status: Implemented and tested**
+
+### 1. Search Manager
+- Implemented filename-based search using C++17 filesystem.
+- Supports recursive directory traversal.
+- Allows users to specify a search keyword and thread count.
+
+### 2. Multithreading
+- Implemented worker threads using `std::thread`.
+- Distributed directory entries among multiple workers.
+- Used `std::mutex` to protect shared search results.
+- Used `std::lock_guard` for automatic mutex management.
+- Used `join()` to wait for all worker threads to complete.
+
+### 3. Application Integration
+- Added multithreaded search to Command Mode.
+- Added multithreaded search to Normal Mode.
+- Displayed matching file paths and total matches.
+- Added validation for invalid thread counts and search keywords.
+
+### 4. Testing
+- Created an independent Search Manager test.
+- Verified recursive filename searching.
+- Tested multiple worker threads.
+- Verified search result collection and synchronization.
+- Registered project tests with CTest.
+- Successfully passed all 8 registered project tests.
+
+**Outcome:** Multithreaded file search is integrated into LYNX and successfully tested.

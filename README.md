@@ -37,6 +37,9 @@ The project focuses on understanding Linux file-system operations, POSIX system 
 | Page Replacement | FIFO, LRU and Optimal algorithms |
 | Simulation Visualization | Frame-by-frame page replacement simulation |
 | Memory Statistics | Page fault, page hit and ratio calculations |
+| Multithreaded Search | Recursive filename search using multiple threads |
+| Thread Synchronization | std::thread, std::mutex and std::lock_guard |
+| Search Integration | Available in Normal Mode and Command Mode |
 
 ## Upcoming Features
 

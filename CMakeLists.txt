@@ -5,6 +5,8 @@ project(LYNX
     DESCRIPTION "Linux File Explorer with Memory Management and Multithreaded Search"
     LANGUAGES CXX
 )
+enable_testing()
+find_package(Threads REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -23,6 +25,7 @@ add_executable(lynx
     src/memory/memory_monitor.cpp
     src/memory/page_replacement.cpp
     src/memory/page_replacement_ui.cpp
+    src/search/search_manager.cpp
 )
 
 target_include_directories(lynx PRIVATE include)
@@ -79,3 +82,36 @@ add_executable(lynx_page_replacement_test
 )
 
 target_include_directories(lynx_page_replacement_test PRIVATE include)
+add_executable(lynx_search_test
+    src/search/search_manager.cpp
+    tests/test_search_manager.cpp
+)
+
+target_include_directories(lynx_search_test PRIVATE include)
+target_link_libraries(lynx PRIVATE Threads::Threads)
+target_link_libraries(lynx_search_test PRIVATE Threads::Threads)
+# Register LYNX tests
+
+add_test(NAME DirectoryTest
+    COMMAND lynx_directory_test)
+
+add_test(NAME NavigationTest
+    COMMAND lynx_navigation_test)
+
+add_test(NAME MetadataTest
+    COMMAND lynx_metadata_test)
+
+add_test(NAME FileOperationsTest
+    COMMAND lynx_file_operations_test)
+
+add_test(NAME TerminalTest
+    COMMAND lynx_terminal_test)
+
+add_test(NAME MemoryMonitorTest
+    COMMAND lynx_memory_monitor_test)
+
+add_test(NAME PageReplacementTest
+    COMMAND lynx_page_replacement_test)
+
+add_test(NAME SearchManagerTest
+    COMMAND lynx_search_test)
