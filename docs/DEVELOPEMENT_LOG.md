@@ -252,3 +252,29 @@ Only completed and verified functionality will be marked as implemented.
 - Verified file types, sizes, permissions and timestamps.
 
 **Result:** All four metadata tests passed successfully.
+## Milestone 4: File Operations
+
+**Status:** Implemented and tested
+
+### Implementation
+- Created FileOperations class.
+- Implemented file creation using open().
+- Implemented directory creation using mkdir().
+- Implemented renaming using rename().
+- Implemented file copying using read() and write().
+- Implemented moving using rename() with a cross-filesystem
+  fallback for regular files.
+- Implemented file deletion using unlink().
+- Implemented empty directory deletion using rmdir().
+- Added error handling using errno and strerror().
+
+### Testing
+- Created tests/test_file_operations.cpp.
+- Tested all seven file operations.
+- Verified renamed file existence.
+- Verified original filename removal.
+- Verified copied file movement and deletion.
+- Verified empty directory deletion.
+- Temporary test files cleaned up.
+
+**Result:** All verification checks passed.

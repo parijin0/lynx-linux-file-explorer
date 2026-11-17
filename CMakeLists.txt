@@ -43,3 +43,10 @@ add_executable(lynx_metadata_test
 )
 
 target_include_directories(lynx_metadata_test PRIVATE include)
+# File operations module test
+add_executable(lynx_file_operations_test
+    tests/test_file_operations.cpp
+    src/filesystem/file_operations.cpp
+)
+
+target_include_directories(lynx_file_operations_test PRIVATE include)
