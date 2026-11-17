@@ -232,3 +232,23 @@ Only completed and verified functionality will be marked as implemented.
 - Tested invalid directory handling.
 
 **Result:** All navigation tests passed successfully.
+## Milestone 3: File Metadata Management
+
+**Status:** Completed and tested
+
+### Implementation
+- Created FileMetadata structure.
+- Implemented get_file_metadata().
+- Used Linux lstat() to retrieve filesystem metadata.
+- Identified regular files, directories, symbolic links and special files.
+- Retrieved file sizes in bytes.
+- Converted permission bits into readable Linux permission strings.
+- Retrieved last modification timestamps.
+
+### Testing
+- Created tests/test_metadata.cpp.
+- Tested README.md and CMakeLists.txt.
+- Tested src and include directories.
+- Verified file types, sizes, permissions and timestamps.
+
+**Result:** All four metadata tests passed successfully.

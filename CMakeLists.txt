@@ -36,3 +36,10 @@ add_executable(lynx_navigation_test
 )
 
 target_include_directories(lynx_navigation_test PRIVATE include)
+# File metadata module test
+add_executable(lynx_metadata_test
+    tests/test_metadata.cpp
+    src/filesystem/file_metadata.cpp
+)
+
+target_include_directories(lynx_metadata_test PRIVATE include)
